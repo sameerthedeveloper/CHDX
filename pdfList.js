@@ -1,25 +1,24 @@
 window.pdfData = {
   "MODULE_1": [
-    "Cadmium selenide quantum dots.pdf",
+    "Cadmium Selenide Quantum Dots.pdf",
     "Duralumin.pdf",
-    "Laquier - Constituents and functions.pdf",
-    "Metal alloy.pdf"
+    "Lacquer- Constituents and Functions.pdf",
+    "Metal Alloy.pdf"
   ],
   "MODULE_2": [
-    "Synthesis of carbon nanotube by CVD method.pdf",
-    "PN junction solar cells.pdf",
-    "LED.pdf",
-    "ABS polymer - synthesis, properties, applications.pdf",
-    "Nylon 6,6 polymer - synthesis, properties, applications.pdf"
+    "LED (Light Emitting Diode).pdf",
+    "PN Junction Solar Cells.pdf",
+    "Synthesis of Carbon Nanotube by CVD Method.pdf",
+    "Synthesis, Properties, and Applications of ABS and Nylon 6,6 Polymer.pdf"
   ],
   "MODULE_3": [
-    "Potentiometric MOSFET gas sensor and CO2 gas sensors.pdf",
-    "DNA micro array chips.pdf",
-    "IR touchscreen sensor.pdf"
+    "DNA Microarray Chips.pdf",
+    "IR Touchscreen Sensor.pdf",
+    "Potentiometric MOSFET Gas Sensor and CO2 Gas Sensors.pdf"
   ],
   "MODULE_4": [
     "Scanning Electron Microscope.pdf",
     "Transmission Electron Microscope.pdf",
-    "Two thermal decomposition graph.pdf"
+    "Two Thermal Decomposition Graph.pdf"
   ]
 };
