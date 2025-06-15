@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF Modules Viewer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="pdfList.js"></script> <!-- Load PDF file data -->
+</head>
+<body class="bg-gray-100 text-gray-900 p-4">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-2xl font-bold text-center mb-6">📚 Module PDF Viewer</h1>
+
+    <div id="modules" class="space-y-6"></div>
+
+    <div id="pdfViewer" class="fixed inset-0 bg-black bg-opacity-80 hidden z-50 flex items-center justify-center">
+      <div class="bg-white w-[90%] h-[90%] rounded shadow-lg flex flex-col">
+        <iframe id="pdfFrame" class="flex-1 w-full"></iframe>
+        <button onclick="closeViewer()" class="bg-red-600 text-white p-2">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modulesContainer = document.getElementById("modules");
+
+    function renderPDFList(data) {
+      for (const [module, files] of Object.entries(data)) {
+        const section = document.createElement("div");
+        section.innerHTML = `
+          <h2 class="text-xl font-semibold mb-2">${module}</h2>
+          <ul class="space-y-2">
+            ${files.map(file => `
+              <li>
+                <button onclick="viewPDF('${module}/${file}')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full text-left">
+                  ${file}
+                </button>
+              </li>
+            `).join("")}
+          </ul>
+        `;
+        modulesContainer.appendChild(section);
+      }
+    }
+
+    function viewPDF(path) {
+      document.getElementById("pdfFrame").src = path;
+      document.getElementById("pdfViewer").classList.remove("hidden");
+    }
+
+    function closeViewer() {
+      document.getElementById("pdfViewer").classList.add("hidden");
+      document.getElementById("pdfFrame").src = "";
+    }
+
+    // Load and render the PDF list
+    renderPDFList(window.pdfData);
+  </script>
+</body>
+</html>
